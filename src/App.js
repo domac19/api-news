@@ -5,9 +5,8 @@ const App = () => {
     const [news, setNews] = useState([]);
     const [error, setError] = useState(null);
 
-    //const API_KEY = '6ad665d016e44c268994cd5eed0baa45';
-    const API_URL =
-        'https://newsapi.org/v2/everything?q=tesla&from=2024-11-09&sortBy=publishedAt&apiKey=6ad665d016e44c268994cd5eed0baa45';
+    const apiKey = process.env.REACT_APP_API_KEY;
+    const API_URL = `https://newsapi.org/v2/everything?q=tesla&from=2024-11-09&sortBy=publishedAt&apiKey=${apiKey}`;
 
     useEffect(() => {
         const fetchNews = async () => {
